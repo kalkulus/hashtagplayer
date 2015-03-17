@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>#HashtagPlayer</title>
+
+    <link href="css/hashtagplayer.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS for the '3 Col Portfolio' Template -->
+    <link href="vendor/css/portfolio-item.css" rel="stylesheet">
+    <script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-2830991-6']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://hashtagplayer.kalkulus.net">#HashtagPlayer</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="" class="hpnav-about">About &amp; Contact</a></li>
+            <!-- <li><a href="" class="hpnav-contact">Contact</a></li> -->
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+	    <div class="row">
+
+	        <div class="col-lg-12">
+		        <h1 class="page-header">#HashtagPlayer <small>creates a playlist of videos from tweets with #hashtag</small></h1>
+			</div>
+
+			<div class="col-lg-12 hpnav-div" id="about">
+				<div class="col-md-9">
+					<h3>About</h3>
+					<p>Do you know about <a href="https://twitter.com/search?src=typd&q=%23metalfriday">#metalfriday</a> or <a href="https://twitter.com/search?src=typd&q=%23ljubavničetvrtak">#ljubavničetvrtak</a>(love Thursday in Serbian)?</p>
+
+					<p>People use these hashtags to tweet music videos, and there's some good music there. </p>
+
+					<p>The only way to hear everything is to go to Twitter search, search for a #hashtag and then go from one tweet to another and play the videos.
+					</p>
+			        
+			        <p>And that get's boring really quickly. So I made #HashtagPlayer.</p>
+			        
+			        <p>It is very much a demo/proof of concept at the moment, but it was fun to do it and I actually use it.</p>
+
+			        <p><strong>Supports only Youtube and it is limited in a number of tweets it can get.</strong></p>
+
+			        <p>Still, I hope you have fun with it :)</p>
+
+
+					<a href="" id="close-about">Close this</a>
+				</div>
+				<div class="col-md-3">
+					<h3>Contact</h3>
+					<p>If you have any feedback, suggestions and stuff you can contact me on <a href="http://twitter.com/kalkulus">Twitter</a> or <a href="http://facebook.com/kalkulus">Facebook</a></p>	
+				</div>				
+
+				<div class="clearfix"></div>				
+	        </div>		
+
+	    </div>
+
+	    <div class="row" id="hashtag-form">			
+
+			<div class="col-md-4">		    
+			</div>
+			<div class="col-md-3">
+			    <input type="text" class="form-control" id="hashtag-input" placeholder="Enter #hashtag"> 
+			</div>
+			<div class="col-md-2">
+				<button class="btn btn-primary" id="play-hashtag">Play it</button>
+			</div>
+			<div class="col-md-3">		    
+			</div>		
+		</div>
+		<div class="row" id="ideas">
+			<div class="col-md-12 text-center">
+				<strong>Try one of these for a start</strong>
+				<a href="#tedx">#tedx</a> | 
+				<a href="#metalfriday">#metalfriday</a> | 
+				<a href="#ljubavničetvrtak">#ljubavničetvrtak</a> | 
+				<a href="#youtube">#youtube</a>
+			</div>		
+		</div>
+		<div class="row" id="hashtag-player">
+
+			<hr>
+
+	        <div class="col-md-7">
+	          <div id="ytapiplayer"></div>
+	        </div>
+
+	        <div class="col-md-5">        
+				<div id="controls">
+					<button type="button" class="btn btn-default" data-toggle="button" id="ctrl-auto">
+						<span class="glyphicon glyphicon-repeat"></span> &nbsp;Autoplay
+					</button>
+					<button type="button" class="btn btn-default" data-toggle="button" id="ctrl-rnd">
+						<span class="glyphicon glyphicon-random"></span> &nbsp;Random
+					</button>
+					<button type="button" class="btn btn-default" id="ctrl-refresh">
+						<span class="glyphicon glyphicon-refresh"></span> &nbsp;Refresh list
+					</button>
+					<button type="button" class="btn btn-default" id="ctrl-prev" title="Previous">
+						<span class="glyphicon glyphicon-backward"></span>
+					</button>
+					<button type="button" class="btn btn-default" id="ctrl-next" title="Next">
+						<span class="glyphicon glyphicon-forward"></span>
+					</button>
+				</div>
+	        	<div id="playlist"></div>
+	        </div>
+
+	    </div>
+
+    </div><!-- /.container -->
+
+    <div class="container">
+
+      <hr>
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <p>Copyright &copy; Dusko Petrovic 2014</p>
+          </div>
+        </div>
+      </footer>
+      
+    </div><!-- /.container -->
+
+<script type="text/html" id="tweet_row">
+<div class="tweet" data-tweet-index="<%= index %>" id="<%= id %>">
+	<div class="ctrl">		
+		<span class="glyphicon glyphicon-play-circle play"></span>
+		<span class="glyphicon glyphicon-stats playing"></span>		
+	</div>
+	<div class="tweet_text">
+		<p>
+			<a href="http://twitter.com/<%= user.username %>" target="_blank">@<%= user.username %></a> 
+			<span class="tweet_url"><a href="http://twitter.com/<%= user.username %>/status/<%= id %>" target="_blank">View tweet</a> <%= dateTime %></span>
+		</p>
+		<p><%= text %></p>
+	</div>
+</div>
+</script>
+
+<!-- Google Analytics -->
+<script>
+  // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  // ga('create', 'UA-2830991-6', 'kalkulus.net');
+  // ga('send', 'pageview');
+
+</script>
+
+<!-- JavaScript -->
+<script src="vendor/js/jquery.js"></script>
+<script src="vendor/js/oauth.js"></script>
+<script src="vendor/js/resig_template.js"></script>
+<script src="vendor/js/swfobject/swfobject.js"></script>    
+
+<script src="js/hashtagplayer.js"></script>
+<script src="js/app.js"></script>
+
+<!-- <script src="js/jquery-1.10.2.js"></script> -->
+<script src="vendor/js/bootstrap.js"></script>
+
+
+
+</body>
+</html>

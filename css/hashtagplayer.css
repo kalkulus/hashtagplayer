@@ -1,0 +1,66 @@
+.current {
+	background-color: #EEEEEE;
+}
+
+.hpnav-div, 
+.ctrl .playing,
+.current .play,
+.tweet_url {
+	display: none;
+}
+
+#about {
+	border-bottom: 1px solid #EEEEEE;	
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+
+#ideas {
+	margin-top: 20px;
+}
+
+#hashtag-player {
+	display: none;
+}
+
+#controls {
+	margin-bottom: 10px;
+}
+
+#playlist {
+	max-height: 500px;	
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.tweet {
+	border-bottom: 1px solid #EEEEEE;	
+	padding-top: 10px;
+}
+
+.tweet .ctrl {
+	display: inline-block;
+	font-size: 30px;
+	width: 50px;
+	text-align: center;
+	vertical-align: top;
+	padding-top: 20px;	
+}
+
+.current .ctrl .playing {
+	display: inline-block;
+}
+
+.ctrl .play {
+	cursor: pointer;
+}
+
+.tweet .tweet_text {
+	display: inline-block;
+	width: 380px;
+}
+
+.tweet:hover .tweet_url {
+	display: inline-block;
+	margin-left: 20px;
+};
